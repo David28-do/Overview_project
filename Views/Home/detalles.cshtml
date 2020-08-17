@@ -1,0 +1,14 @@
+﻿@model Overview_project.Models.viewmodel.Contacto
+@{
+    ViewBag.Title = "detalles";
+}
+
+<h2>detalles</h2>
+
+<div>
+    @Html.LabelFor(d=> d.name_entity)
+    @Html.TextBoxFor(d => d.name_entity, "", new { @class = "form-control" })
+    @Html.ValidationMessageFor(d => d.name_entity, null, new { @class = "red" })
+</div>
+
+<a href="~/Home/Index/@Model.name_entity" class="btn btn-primary">enviar</a>

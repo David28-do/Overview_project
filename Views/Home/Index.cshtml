@@ -1,0 +1,25 @@
+﻿@model Overview_project.Models.viewmodel.departamento
+@{
+    ViewBag.Title = "departamentos";
+}
+
+<h2>ViewBag.Title</h2>
+<div class="row" style="text-align:right;padding:5px;">
+    <a href="~/Lista/Nuevo" class="btn btn-primary">Nuevo</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>Municipios del Amañozas</th>
+            </tr>
+            @foreach (var datos in Model.Amazonas)
+            {
+                <td>@datos</td>
+            }
+         
+            }
+        </table>
+    </div>
+</div>

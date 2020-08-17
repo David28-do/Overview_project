@@ -1,0 +1,82 @@
+﻿@model Overview_project.Models.viewmodel.Contacto
+@{
+    ViewBag.Title = "Nuevo";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        #imagen {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 50%;
+        }
+    </style>
+    }
+</head>
+<body>
+    <div class="signupform">
+        <br />
+        <br />
+        <img src="~/images/sigma-logos.jpg" id="imagen" />
+        <h1>Prueba de desarrollo Sigma</h1>
+        <p>
+            Lorem ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem ipsum has been the<br />industry's standard dummy
+            text ever since the 1500s, wgen an unknown printer took a galley
+            of type and <br /> scrambled it to make a type specimen book
+
+        </p>
+        <br />
+        <div class="container">
+            <div class="agile_info">
+                <div class="w3l_form">
+                    <div class="left_grid_info">
+                        <img src="~/images/sigma-imagen1.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="w3_info">
+                    <form action="#" method="post">
+                        @using (Html.BeginForm("Nuevo", "Lista", FormMethod.Post))
+                        {
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <h4>Departamento*</h4>
+                                        <br />
+                                        @Html.DropDownList("state_entity", (List<SelectListItem>)ViewBag.MiListado, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(d => d.state_entity, null, new { @class = "red" })
+                                    </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <h4>Ciudad*</h4>
+                                        @Html.TextBoxFor(d => d.city_entity, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(d => d.city_entity, null, new { @class = "red" })
+                                    </div>
+                                    <div class="input-group">
+                                        <h4>Nombre*</h4>
+                                        @Html.TextBoxFor(d => d.name_entity, "", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(d => d.name_entity, null, new { @class = "red" })
+                                    </div>
+                                    <div class="input-group">
+                                        <h4>Correo*</h4>
+                                        @Html.TextBoxFor(d => d.email_entity, "", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(d => d.email_entity, null, new { @class = "red" })
+                                    </div>
+                                    <div style="text-align:right">
+                                        <button class="btn btn-danger btn-block" type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                           
+                        
+                        }
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
